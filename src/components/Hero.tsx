@@ -32,7 +32,7 @@ export function Hero() {
           Cinematography & video production
         </motion.p>
         <motion.h1
-          className="font-work-sans text-4xl leading-tight text-white sm:text-5xl lg:text-6xl"
+          className="font-oswald font-bold text-4xl leading-tight text-white sm:text-5xl lg:text-6xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}

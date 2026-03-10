@@ -1,6 +1,6 @@
 4
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Bebas_Neue } from "next/font/google";
+import { Inter, Playfair_Display, Bebas_Neue, Montserrat, Oswald } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,6 +18,17 @@ const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-bebas",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-montserrat",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-oswald",
 });
 
 export const metadata: Metadata = {
@@ -74,7 +85,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} ${bebasNeue.variable} bg-[var(--background)] text-[var(--foreground)] antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${bebasNeue.variable} ${montserrat.variable} ${oswald.variable} bg-[var(--background)] text-[var(--foreground)] antialiased`}
 
       >
         {children}

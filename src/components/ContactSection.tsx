@@ -55,7 +55,7 @@ export function ContactSection() {
           <h2 className="section-heading text-3xl">Let's frame your next story</h2>
           <p className="text-white/70">
             Have a project in mind? Share your details, timeline, or references.
-            Mohit will get back to you within 24 hours to discuss availability and the best approach for your video.
+            I will get back to you within 24 hours to discuss availability and the best approach for your video.
           </p>
         </div>
 
@@ -136,7 +136,7 @@ export function ContactSection() {
             )}
             {status === "error" && (
               <p className="text-sm text-red-400">
-                Something went wrong. Please email hello@mohitghar.at.
+                Something went wrong. Please email framesbymohitt@gmail.com.
               </p>
             )}
           </form>
