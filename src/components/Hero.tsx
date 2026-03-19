@@ -17,7 +17,7 @@ export function Hero() {
         poster="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="
         className="absolute inset-0 h-full w-full object-cover opacity-70"
       >
-        <source src="/10481000-uhd_4096_2160_25fps.mp4" type="video/mp4" />
+        <source src="/heropagebg.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black" />
 

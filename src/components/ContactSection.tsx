@@ -107,12 +107,13 @@ export function ContactSection() {
                 type="email"
                 name="email"
                 className="mt-2 w-full rounded-2xl border border-white/20 bg-black/20 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#FACC15] focus:outline-none"
-                placeholder="you@studio.com"
+                placeholder="you@gmail.com"
               />
             </div>
             <div>
               <label className="text-sm uppercase tracking-[0.3em] text-white/70">
                 Message
+
               </label>
               <textarea
                 required
