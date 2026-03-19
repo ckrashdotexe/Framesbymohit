@@ -13,8 +13,8 @@ export function Hero() {
         muted
         loop
         playsInline
-        controls
-        poster="https://unsplash.com/photos/a-couple-of-men-standing-next-to-each-other-aJo_DOTMQTA"
+        preload="auto"
+        poster="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="
         className="absolute inset-0 h-full w-full object-cover opacity-70"
       >
         <source src="/10481000-uhd_4096_2160_25fps.mp4" type="video/mp4" />

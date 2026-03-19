@@ -318,8 +318,24 @@
    ============================================================ */
 
 @media (max-width: 768px) {
+  .reels-section-header {
+    padding: 0 20px;
+  }
+
+  .reels-description {
+    max-width: 90vw;
+    font-size: 0.95rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
   .reels-stage {
     height: 430px;
+  }
+
+  .reels-slide {
+    width: 240px;
+    height: 426px;
   }
 
   .reels-nav-btn--prev {
@@ -340,8 +356,24 @@
 }
 
 @media (max-width: 480px) {
+  .reels-description {
+    max-width: 95vw;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
   .reels-stage {
     height: 380px;
+  }
+
+  .reels-slide {
+    width: 200px;
+    height: 355px;
+  }
+
+  .reels-nav-btn {
+    width: 36px;
+    height: 36px;
   }
 
   .reels-modal-inner {

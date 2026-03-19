@@ -106,3 +106,8 @@ body {
   font-family: var(--font-bebas), "Bebas Neue", sans-serif;
   letter-spacing: 0.02em;
 }
+
+/* Force linear easing for continuous Swiper marquee scroll */
+.clients-marquee-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}

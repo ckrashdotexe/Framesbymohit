@@ -49,7 +49,7 @@ export function ClientsMarquee() {
           modules={[Autoplay, FreeMode]}
           loop
           freeMode
-          speed={3000}
+          speed={5000}
           autoplay={{
             delay: 0,
             disableOnInteraction: false,

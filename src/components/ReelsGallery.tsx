@@ -1,11 +1,26 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import "./VideoGallery.css";
 import type { ReelItem } from "../types/content";
 
+function useSlideOffset() {
+  const [offset, setOffset] = useState(300);
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setOffset(w <= 480 ? 200 : w <= 768 ? 250 : 300);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return offset;
+}
+
 export function ReelsGallery({ items }: { items: ReelItem[] }) {
+  const slideOffset = useSlideOffset();
   const [activeIndex, setActiveIndex] = useState(0);
   const [playingItem, setPlayingItem] = useState<ReelItem | null>(null);
 
@@ -138,7 +153,7 @@ export function ReelsGallery({ items }: { items: ReelItem[] }) {
             if (absOffset > Math.max(3, Math.floor(items.length / 2))) return null;
 
             // Positioning WITH active drag calculation applied
-            const xOffset = (offset * 300) + (isDragging ? dragX : 0);
+            const xOffset = (offset * slideOffset) + (isDragging ? dragX : 0);
             const scale = isActive ? 1.05 : absOffset === 1 ? 0.88 : 0.76;
             const opacity = isActive ? 1 : absOffset === 1 ? 0.65 : absOffset === 2 ? 0.35 : 0;
 
