@@ -12,6 +12,8 @@ import type { CinematicItem } from "../types/content";
 
 export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
   const [selected, setSelected] = useState<CinematicItem | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState<any>(null);
   const closeLightbox = () => setSelected(null);
   const displayItems = items.length > 0 && items.length < 7 ? [...items, ...items] : items;
 
@@ -48,7 +50,8 @@ export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
             delay: 3500,
             disableOnInteraction: false,
           }}
-          pagination={{ clickable: true, el: ".cinematics-pagination" }}
+          onSwiper={setSwiperInstance}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex % items.length)}
           modules={[EffectCoverflow, Autoplay, Pagination]}
           className="cinematic-swiper"
         >
@@ -93,7 +96,27 @@ export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="cinematics-pagination" />
+        <div className="cinematics-pagination">
+          {items.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              className={`swiper-pagination-bullet${i === activeIndex ? " swiper-pagination-bullet-active" : ""}`}
+              onClick={() => {
+                if (!swiperInstance) return;
+                let target = i;
+                if (displayItems.length > items.length) {
+                  const current = swiperInstance.realIndex;
+                  const opt1 = i;
+                  const opt2 = i + items.length;
+                  target = Math.abs(current - opt1) < Math.abs(current - opt2) ? opt1 : opt2;
+                }
+                swiperInstance.slideToLoop(target);
+              }}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
       {selected && (

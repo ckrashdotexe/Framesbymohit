@@ -29,7 +29,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          Cinematography & video production
+          Cinematography & Visual storytelling 
         </motion.p>
         <motion.h1
           className="font-oswald font-bold text-4xl leading-tight text-white sm:text-5xl lg:text-6xl"
